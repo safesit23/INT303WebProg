@@ -17,6 +17,7 @@
                 padding: 50px;
                 text-align: center;
                 font-family: sans-serif;
+                background-color: #FFFFED;
             }
         </style>
         <h1>CHECKING PRIME NUMBER</h1>
