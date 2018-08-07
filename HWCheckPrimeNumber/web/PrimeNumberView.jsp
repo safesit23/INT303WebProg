@@ -21,6 +21,7 @@
         </style>
         <h1>CHECKING PRIME NUMBER</h1>
         <h4>${primeNum.number} is ${primeNum.resultPrimeNumber}</h4>
+        <a href="/Homework/index.html"><button>Try Again!</button></a>
         <p>Cr.Jatawatsafe</p>
     </body>
 </html>
