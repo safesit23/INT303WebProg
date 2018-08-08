@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>SimpleCalculatorServlet</servlet-name>
+        <servlet-class>sit.int303.first.servlet.SimpleCalculatorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VerySimpleCalcutorServlet</servlet-name>
+        <servlet-class>sit.int303.first.servlet.VerySimpleCalcutorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PrimeNumberServlet</servlet-name>
+        <servlet-class>sit.int303.first.servlet.PrimeNumberServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SimpleCalculatorServlet</servlet-name>
+        <url-pattern>/SimpleCalc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerySimpleCalcutorServlet</servlet-name>
+        <url-pattern>/VerySimpleCalc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PrimeNumberServlet</servlet-name>
+        <url-pattern>/PrimeNumber</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
