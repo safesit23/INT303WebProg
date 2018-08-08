@@ -12,13 +12,19 @@
         <title>Prime Number</title>
     </head>
     <body>
-        <h1>Prime Number Application::</h1><br>
+        <style>
+            body{
+                font-family: sans-serif;
+                text-align: center;
+            }
+        </style>
+        <h1>Prime Number Application::</h1><hr><br>
         <form action="PrimeNumber" method="post">
             Please enter number:
-            <input type="number" required min="2"/>
+            <input type="number" name="number" required min="2"/>
             <input type="submit" value="CHECKING"/>
         </form>
-        <hr>
-        ${pn.number}is ${pn.primeNumber ? "":"not"} Prime Number.
+        <br><hr>
+        <h4>${pn.number}is ${pn.primeNumber ? "":"not"} Prime Number.</h4>
     </body>
 </html>
