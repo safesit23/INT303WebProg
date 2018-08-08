@@ -17,7 +17,7 @@
         <form action="TestRequestParam" method="post">
             Your Student Id: <input type="text" name="id" required/><br>
             Your name: <input type="text" name="name" required/><br>
-            Favorite Subject: 
+            Favorite Subject: <br>
             <input type="checkbox" name="subjects" value="Web Programming">Web Programming<br>
             <input type="checkbox" name="subjects" value="Database Administrator">Database Administrator<br>
             <input type="checkbox" name="subjects" value="Computer Network">Computer Network<br>
@@ -41,10 +41,11 @@
                 <td>Your Favorite Subjects :</td>
                 <td>
                     <c:forEach items="${subjectList}" var="str">
-                        ${str}<br>
+                        ${str}, 
                     </c:forEach>
                 </td>
             </tr>
         </table>
+            <a href="/MyFirst/index.html"><button>Back to menu</button></a>
     </body>
 </html>
