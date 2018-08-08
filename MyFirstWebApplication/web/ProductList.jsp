@@ -4,6 +4,7 @@
     Author     : INT303
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,6 +23,17 @@
             <th>Scale</th>
             <th>Price</th>
             </thead>
+            <!-- Loop -->
+            <c:forEach items="${products}" var="p" varStatus="vs">
+            <tr>
+                <td>${vs.count}</td>
+                <td>${p.productCode}</td>
+                <td>${p.productName}</td>
+                <td>${p.productLine}</td>
+                <td>${p.productScale}</td>
+                <td>${p.msrp}</td>
+            </tr>
+            </c:forEach>
         </table>
     </body>
 </html>
