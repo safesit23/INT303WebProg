@@ -22,10 +22,10 @@ import java.util.StringTokenizer;
  * @author Khaitong
  */
 public class ProductMockup {
-
+    //MAP โดยให้ ProductCode คือ KEY
     private static Map<String, Product> products;
     private static List<Product> productList;
-    private static String fileLocation;
+    private static String fileLocation;     //find Absolute path
 
     public static String getFileLocation() {
         return fileLocation;
@@ -34,14 +34,14 @@ public class ProductMockup {
     public static void setFileLocation(String fileLocation) {
         ProductMockup.fileLocation = fileLocation;
     }
-
+    //แสดงผล Product ทั้งหมด
     public static List getProducts() {
         if (products == null || productList == null) {
             readProduct();
         }
         return Collections.unmodifiableList(productList);
     }
-
+    //เอาไว้ค้นหา
     public static Product getProduct(String productCode) {
         if (products == null || productList == null) {
             readProduct();

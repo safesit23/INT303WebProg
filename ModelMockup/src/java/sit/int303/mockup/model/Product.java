@@ -14,7 +14,7 @@ public class Product {
     private String productLine;
     private String productScale;
     private String productVendor;
-    private double msrp;
+    private double msrp;    //Manufacturer's suggested retail price 
 
     public Product() {
     }
