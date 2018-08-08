@@ -35,7 +35,7 @@ public class ProductMockup {
         ProductMockup.fileLocation = fileLocation;
     }
 
-    public static List getProducts() {
+    public static List<Product> getProducts() {
         if (products == null || productList == null) {
             readProduct();
         }
