@@ -7,6 +7,8 @@ package sit.int303.first.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,7 +33,17 @@ public class TestRequestParamServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String id = request.getParameter("id");
+        String name = request.getParameter("name");
+        String[] subjects = request.getParameterValues("subjects");
+        //List เป็น interface
+        List<String> subjectList = new ArrayList();
+        for (String subject : subjects) {
+            subjectList.add(subject);
+        }
         
+        request.setAttribute("subjectList", subjectList); //ควรตั้งชื่อเดียวกัน
+        getServletContext().getRequestDispatcher("/ViewParameter.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -46,7 +58,7 @@ public class TestRequestParamServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //------ไม่จ้องส่งไปที่ progressRequest--------
+        //------ไม่ต้องส่งไปที่ progressRequest--------
         //processRequest(request, response);
         getServletContext().getRequestDispatcher("/ViewParameter.jsp").forward(request, response);
         
