@@ -25,6 +25,6 @@
             <input type="submit" value="CHECKING"/>
         </form>
         <br><hr>
-        <h4>${pn.number}is ${pn.primeNumber ? "":"not"} Prime Number.</h4>
+        <h4>${pn.number} is ${pn.primeNumber ? "":"not"} Prime Number.</h4>
     </body>
 </html>
