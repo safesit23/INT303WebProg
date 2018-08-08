@@ -31,6 +31,7 @@ public class PrimeNumberServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String n = request.getParameter("number");
+        //ถ้าตัวเลขไม่ null จะ set Attribute
         if (n != null) {
             int number = Integer.valueOf(n);
             PrimeNumber pn = new PrimeNumber(number);
