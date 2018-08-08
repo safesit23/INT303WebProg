@@ -9,5 +9,7 @@ public class testPrimeNumber {
         System.out.printf("Is %d is Prime Number ?  %b\n",pn.getNumber(),pn.isPrimeNumber());
         pn.setNumber(3);
         System.out.printf("Is %d is Prime Number ?  %b\n",pn.getNumber(),pn.isPrimeNumber());
+        pn.setNumber(4);
+        System.out.printf("Is %d is Prime Number ?  %b\n",pn.getNumber(),pn.isPrimeNumber());
     }
 }
