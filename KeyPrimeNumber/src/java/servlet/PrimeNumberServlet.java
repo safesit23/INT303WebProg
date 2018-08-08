@@ -31,9 +31,12 @@ public class PrimeNumberServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String n = request.getParameter("number");
-        int number = Integer.valueOf(n);
-        PrimeNumber pn = new PrimeNumber(number);
-        request.setAttribute("pn", pn);
+        if (n != null) {
+            int number = Integer.valueOf(n);
+            PrimeNumber pn = new PrimeNumber(number);
+            request.setAttribute("pn", pn);
+        }
+
         getServletContext().getRequestDispatcher("/PrimeNumberView.jsp").forward(request, response);
     }
 
