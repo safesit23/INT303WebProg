@@ -39,7 +39,6 @@ public class ProductListServlet extends HttpServlet {
         List<Product> products = ProductMockup.getProducts();
         request.setAttribute("products", products);
         getServletContext().getRequestDispatcher("/ProductList.jsp").forward(request, response);
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
