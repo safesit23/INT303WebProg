@@ -26,6 +26,7 @@
             <!-- Loop -->
             <c:forEach items="${products}" var="p" varStatus="vs">
             <tr>
+                <td><img src="model-images/${p.productCode}.jpg" width="120"</td>
                 <td>${vs.count}</td>
                 <td>${p.productCode}</td>
                 <td>${p.productName}</td>
@@ -35,5 +36,6 @@
             </tr>
             </c:forEach>
         </table>
+        <a href="/MyFirst/index.html"><button>Back to menu</button></a>
     </body>
 </html>
