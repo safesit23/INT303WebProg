@@ -1,0 +1,110 @@
+S10_1678	1969 Harley Davidson Ultimate Chopper	Motorcycles	1:10	Min Lin Diecast	95.7
+S10_1949	1952 Alpine Renault 1300	Classic Cars	1:10	Classic Metal Creations	214.3
+S10_2016	1996 Moto Guzzi 1100i	Motorcycles	1:10	Highway 66 Mini Classics	118.94
+S10_4698	2003 Harley-Davidson Eagle Drag Bike	Motorcycles	1:10	Red Start Diecast	193.66
+S10_4757	1972 Alfa Romeo GTA	Classic Cars	1:10	Motor City Art Classics	136
+S10_4962	1962 LanciaA Delta 16V	Classic Cars	1:10	Second Gear Diecast	147.74
+S12_1099	1968 Ford Mustang	Classic Cars	1:12	Autoart Studio Design	194.57
+S12_1108	2001 Ferrari Enzo	Classic Cars	1:12	Second Gear Diecast	207.8
+S12_1666	1958 Setra Bus	Trucks and Buses	1:12	Welly Diecast Productions	136.67
+S12_2823	2002 Suzuki XREO	Motorcycles	1:12	Unimax Art Galleries	150.62
+S12_3148	1969 Corvair Monza	Classic Cars	1:18	Welly Diecast Productions	151.08
+S12_3380	1968 Dodge Charger	Classic Cars	1:12	Welly Diecast Productions	117.44
+S12_3891	1969 Ford Falcon	Classic Cars	1:12	Second Gear Diecast	173.02
+S12_3990	1970 Plymouth Hemi Cuda	Classic Cars	1:12	Studio M Art Models	79.8
+S12_4473	1957 Chevy Pickup	Trucks and Buses	1:12	Exoto Designs	118.5
+S12_4675	1969 Dodge Charger	Classic Cars	1:12	Welly Diecast Productions	115.16
+S18_1097	1940 Ford Pickup Truck	Trucks and Buses	1:18	Studio M Art Models	116.67
+S18_1129	1993 Mazda RX-7	Classic Cars	1:18	Highway 66 Mini Classics	141.54
+S18_1342	1937 Lincoln Berline	Vintage Cars	1:18	Motor City Art Classics	102.74
+S18_1367	1936 Mercedes-Benz 500K Special Roadster	Vintage Cars	1:18	Studio M Art Models	53.91
+S18_1589	1965 Aston Martin DB5	Classic Cars	1:18	Classic Metal Creations	124.44
+S18_1662	1980s Black Hawk Helicopter	Planes	1:18	Red Start Diecast	157.69
+S18_1749	1917 Grand Touring Sedan	Vintage Cars	1:18	Welly Diecast Productions	170
+S18_1889	1948 Porsche 356-A Roadster	Classic Cars	1:18	Gearbox Collectibles	77
+S18_1984	1995 Honda Civic	Classic Cars	1:18	Min Lin Diecast	142.25
+S18_2238	1998 Chrysler Plymouth Prowler	Classic Cars	1:18	Gearbox Collectibles	163.73
+S18_2248	1911 Ford Town Car	Vintage Cars	1:18	Motor City Art Classics	60.54
+S18_2319	1964 Mercedes Tour Bus	Trucks and Buses	1:18	Unimax Art Galleries	122.73
+S18_2325	1932 Model A Ford J-Coupe	Vintage Cars	1:18	Autoart Studio Design	127.13
+S18_2432	1926 Ford Fire Engine	Trucks and Buses	1:18	Carousel DieCast Legends	60.77
+S18_2581	P-51-D Mustang	Planes	1:18	Gearbox Collectibles	84.48
+S18_2625	1936 Harley Davidson El Knucklehead	Motorcycles	1:18	Welly Diecast Productions	60.57
+S18_2795	1928 Mercedes-Benz SSK	Vintage Cars	1:18	Gearbox Collectibles	168.75
+S18_2870	1999 Indy 500 Monte Carlo SS	Classic Cars	1:18	Red Start Diecast	132
+S18_2949	1913 Ford Model T Speedster	Vintage Cars	1:18	Carousel DieCast Legends	101.31
+S18_2957	1934 Ford V8 Coupe	Vintage Cars	1:18	Min Lin Diecast	62.46
+S18_3029	1999 Yamaha Speed Boat	Ships	1:18	Min Lin Diecast	86.02
+S18_3136	18th Century Vintage Horse Carriage	Vintage Cars	1:18	Red Start Diecast	104.72
+S18_3140	1903 Ford Model A	Vintage Cars	1:18	Unimax Art Galleries	136.59
+S18_3232	1992 Ferrari 360 Spider red	Classic Cars	1:18	Unimax Art Galleries	169.34
+S18_3233	1985 Toyota Supra	Classic Cars	1:18	Highway 66 Mini Classics	107.57
+S18_3259	Collectable Wooden Train	Trains	1:18	Carousel DieCast Legends	100.84
+S18_3278	1969 Dodge Super Bee	Classic Cars	1:18	Min Lin Diecast	80.41
+S18_3320	1917 Maxwell Touring Car	Vintage Cars	1:18	Exoto Designs	99.21
+S18_3482	1976 Ford Gran Torino	Classic Cars	1:18	Gearbox Collectibles	146.99
+S18_3685	1948 Porsche Type 356 Roadster	Classic Cars	1:18	Gearbox Collectibles	141.28
+S18_3782	1957 Vespa GS150	Motorcycles	1:18	Studio M Art Models	62.17
+S18_3856	1941 Chevrolet Special Deluxe Cabriolet	Vintage Cars	1:18	Exoto Designs	105.87
+S18_4027	1970 Triumph Spitfire	Classic Cars	1:18	Min Lin Diecast	143.62
+S18_4409	1932 Alfa Romeo 8C2300 Spider Sport	Vintage Cars	1:18	Exoto Designs	92.03
+S18_4522	1904 Buick Runabout	Vintage Cars	1:18	Exoto Designs	87.77
+S18_4600	1940s Ford truck	Trucks and Buses	1:18	Motor City Art Classics	121.08
+S18_4668	1939 Cadillac Limousine	Vintage Cars	1:18	Studio M Art Models	50.31
+S18_4721	1957 Corvette Convertible	Classic Cars	1:18	Classic Metal Creations	148.8
+S18_4933	1957 Ford Thunderbird	Classic Cars	1:18	Studio M Art Models	71.27
+S24_1046	1970 Chevy Chevelle SS 454	Classic Cars	1:24	Unimax Art Galleries	73.49
+S24_1444	1970 Dodge Coronet	Classic Cars	1:24	Highway 66 Mini Classics	57.8
+S24_1578	1997 BMW R 1100 S	Motorcycles	1:24	Autoart Studio Design	112.7
+S24_1628	1966 Shelby Cobra 427 S/C	Classic Cars	1:24	Carousel DieCast Legends	50.31
+S24_1785	1928 British Royal Navy Airplane	Planes	1:24	Classic Metal Creations	109.42
+S24_1937	1939 Chevrolet Deluxe Coupe	Vintage Cars	1:24	Motor City Art Classics	33.19
+S24_2000	1960 BSA Gold Star DBD34	Motorcycles	1:24	Highway 66 Mini Classics	76.17
+S24_2011	18th century schooner	Ships	1:24	Carousel DieCast Legends	122.89
+S24_2022	1938 Cadillac V-16 Presidential Limousine	Vintage Cars	1:24	Classic Metal Creations	44.8
+S24_2300	1962 Volkswagen Microbus	Trucks and Buses	1:24	Autoart Studio Design	127.79
+S24_2360	1982 Ducati 900 Monster	Motorcycles	1:24	Highway 66 Mini Classics	69.26
+S24_2766	1949 Jaguar XK 120	Classic Cars	1:24	Classic Metal Creations	90.87
+S24_2840	1958 Chevy Corvette Limited Edition	Classic Cars	1:24	Carousel DieCast Legends	35.36
+S24_2841	1900s Vintage Bi-Plane	Planes	1:24	Autoart Studio Design	68.51
+S24_2887	1952 Citroen-15CV	Classic Cars	1:24	Exoto Designs	117.44
+S24_2972	1982 Lamborghini Diablo	Classic Cars	1:24	Second Gear Diecast	37.76
+S24_3151	1912 Ford Model T Delivery Wagon	Vintage Cars	1:24	Min Lin Diecast	88.51
+S24_3191	1969 Chevrolet Camaro Z28	Classic Cars	1:24	Exoto Designs	85.61
+S24_3371	1971 Alpine Renault 1600s	Classic Cars	1:24	Welly Diecast Productions	61.23
+S24_3420	1937 Horch 930V Limousine	Vintage Cars	1:24	Autoart Studio Design	65.75
+S24_3432	2002 Chevy Corvette	Classic Cars	1:24	Gearbox Collectibles	107.08
+S24_3816	1940 Ford Delivery Sedan	Vintage Cars	1:24	Carousel DieCast Legends	83.86
+S24_3856	1956 Porsche 356A Coupe	Classic Cars	1:18	Classic Metal Creations	140.43
+S24_3949	Corsair F4U ( Bird Cage)	Planes	1:24	Second Gear Diecast	68.24
+S24_3969	1936 Mercedes Benz 500k Roadster	Vintage Cars	1:24	Red Start Diecast	41.03
+S24_4048	1992 Porsche Cayenne Turbo Silver	Classic Cars	1:24	Exoto Designs	118.28
+S24_4258	1936 Chrysler Airflow	Vintage Cars	1:24	Second Gear Diecast	97.39
+S24_4278	1900s Vintage Tri-Plane	Planes	1:24	Unimax Art Galleries	72.45
+S24_4620	1961 Chevrolet Impala	Classic Cars	1:18	Classic Metal Creations	80.84
+S32_1268	1980 GM Manhattan Express	Trucks and Buses	1:32	Motor City Art Classics	96.31
+S32_1374	1997 BMW F650 ST	Motorcycles	1:32	Exoto Designs	99.89
+S32_2206	1982 Ducati 996 R	Motorcycles	1:32	Gearbox Collectibles	40.23
+S32_2509	1954 Greyhound Scenicruiser	Trucks and Buses	1:32	Classic Metal Creations	54.11
+S32_3207	1950's Chicago Surface Lines Streetcar	Trains	1:32	Gearbox Collectibles	62.14
+S32_3522	1996 Peterbilt 379 Stake Bed with Outrigger	Trucks and Buses	1:32	Red Start Diecast	64.64
+S32_4289	1928 Ford Phaeton Deluxe	Vintage Cars	1:32	Highway 66 Mini Classics	68.79
+S32_4485	1974 Ducati 350 Mk3 Desmo	Motorcycles	1:32	Second Gear Diecast	102.05
+S50_1341	1930 Buick Marquette Phaeton	Vintage Cars	1:50	Studio M Art Models	43.64
+S50_1392	Diamond T620 Semi-Skirted Tanker	Trucks and Buses	1:50	Highway 66 Mini Classics	115.75
+S50_1514	1962 City of Detroit Streetcar	Trains	1:50	Classic Metal Creations	58.58
+S50_4713	2002 Yamaha YZR M1	Motorcycles	1:50	Autoart Studio Design	81.36
+S700_1138	The Schooner Bluenose	Ships	1:50	Autoart Studio Design	66.67
+S700_1691	American Airlines: B767-300	Planes	1:50	Min Lin Diecast	91.34
+S700_1938	The Mayflower	Ships	1:50	Studio M Art Models	86.61
+S700_2047	HMS Bounty	Ships	1:50	Unimax Art Galleries	90.52
+S700_2466	America West Airlines B757-200	Planes	1:50	Motor City Art Classics	99.72
+S700_2610	The USS Constitution Ship	Ships	1:50	Red Start Diecast	72.28
+S700_2824	1982 Camaro Z28	Classic Cars	1:18	Carousel DieCast Legends	101.15
+S700_2834	ATA: B757-300	Planes	1:50	Highway 66 Mini Classics	118.65
+S700_3167	F/A 18 Hornet 1/72	Planes	1:18	Motor City Art Classics	80
+S700_3505	The Titanic	Ships	1:50	Carousel DieCast Legends	100.17
+S700_3962	The Queen Mary	Ships	1:50	Welly Diecast Productions	99.31
+S700_4002	American Airlines: MD-11S	Planes	1:50	Second Gear Diecast	74.03
+S72_1253	Boeing X-32A JSF	Planes	1:18	Motor City Art Classics	49.66
+S72_3212	Pont Yacht	Ships	1:18	Unimax Art Galleries	0.6
