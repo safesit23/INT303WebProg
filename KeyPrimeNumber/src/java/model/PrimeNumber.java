@@ -20,7 +20,7 @@ public class PrimeNumber {
     
     public boolean isPrimeNumber(){
         boolean isPrime = number > 1?true:false;    //ถ้าตัวเลขมากกว่า 1 ให้ตั้งต้นเป็น true
-        for (int i = 2; i < number/2; i++) {        //เช็คเพียงครึ่งเดียวว่าหารลงตัวไหม
+        for (int i = 2; i < number; i++) {       
             if(number%i==0){
                 isPrime = false;
                 break;
