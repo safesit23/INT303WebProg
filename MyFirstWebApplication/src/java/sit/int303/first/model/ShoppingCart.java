@@ -22,8 +22,22 @@ public class ShoppingCart implements Serializable{
         
     }
     public void add(Product p){
-        
-        cart.put(p.getProductCode(), new LineItem(p));
+        LineItem line= cart.get(p.getProductCode());
+        //ถ้าสินค้านั้นไม่เคยมีอยู่
+        if(line==null){
+            cart.put(p.getProductCode(), new LineItem(p));
+        //ถ้าสินค้านั้นมีอยู่ในตระกร้าแต่ต้องการเพิ่มจำนวน
+        }else{
+            line.setQuantity(line.getQuantity()+1);
+        }
+    }
+    
+    public void remove(Product p){
+        this.remove(p.getProductCode());
+    }
+    
+    public void remove(String productCode){
+        cart.remove(productCode);
     }
     
 }
