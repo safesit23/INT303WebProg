@@ -26,6 +26,7 @@
         </form>
         <br><hr>
         <h4>${pn.number} is ${pn.primeNumber ? "":"not"} Prime Number.</h4>
+        <p>Checking Object: ${pn}</p>
         <a href="/MyFirst/index.html"><button>Back to menu</button></a>
     </body>
 </html>
