@@ -6,8 +6,10 @@
 package sit.int303.first.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import sit.int303.mockup.model.Product;
 
@@ -57,5 +59,9 @@ public class ShoppingCart implements Serializable{
             sum+=lineItem.getQuantity();
         }
         return sum;
+    }
+    
+    public List<LineItem> getLineItems(){
+        return new ArrayList(cart.values());
     }
 }
