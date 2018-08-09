@@ -18,8 +18,32 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
     </head>
     <body>
-        <div>
-            <h1>Product List::</h1>
+        <style>
+            body{
+                background-color: #FFFDFA;
+            }
+            #buttonFooter{
+                padding: 25px;
+            }
+        </style>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand">INT303 WebProgramming</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/MyFirst/index.html">Home</a></li>
+                    <li><a href="PrimeNumber">1.Prime Number</a></li>
+                    <li><a href="/MyFirst/CalculatorForm.html">2.Simple Calculator</a></li>
+                    <li><a href="TestRequestParam">3.TestRequestParam</a></li>
+                    <li class="active"><a href="ProductList">4.Our Product</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="container" align="center" style="padding: 20px;">
+                <h1>--Product List--</h1>
+            </div>
             <table id="example" class="table">
                 <thead>
                 <th>Image</th>
@@ -49,6 +73,8 @@
                 $('#example').DataTable();
             });
         </script>
-        <a href="/MyFirst/index.html"><button>Back to menu</button></a>
+        <div id="buttonFooter" class="container" align="center">
+            <a href="/MyFirst/index.html"><button class="btn btn-info">Back to menu</button></a>
+        </div>
     </body>
 </html>
