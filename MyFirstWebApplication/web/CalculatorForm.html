@@ -13,19 +13,36 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
     </head>
     <body>
-        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand">INT303 WebProgramming</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/MyFirst/index.html">Home</a></li>
+                    <li><a href="PrimeNumber">1.Prime Number</a></li>
+                    <li class="active"><a href="/MyFirst/CalculatorForm.html">2.Simple Calculator</a></li>
+                    <li><a href="TestRequestParam">3.TestRequestParam</a></li>
+                    <li ><a href="ProductList">4.Our Product</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container" align="center">
         <h1>Calculator Form</h1>
         <form action="VerySimpleCalc" method="post">
-        x = <input type="number" required name="x"/><br>
-        y = <input type="number" required name="y"/><br>
-        operator: <select name="operator">
-            <option value="+"> + </option>
-            <option value="-"> - </option>
-            <option value="*"> * </option>
-            <option value="/"> / </option>
-        </select>
-        <input type="submit"/>
-    </form>
-        
+            x = <input type="number" required name="x"/><br>
+            y = <input type="number" required name="y"/><br>
+            operator: <select name="operator">
+                <option value="+"> + </option>
+                <option value="-"> - </option>
+                <option value="*"> * </option>
+                <option value="/"> / </option>
+            </select>
+            <input type="submit"/>
+        </form>
+        <div id="buttonFooter" class="container" align="center" style="padding-top: 25px;">
+            <a href="/MyFirst/index.html"><button class="btn btn-info">Back to menu</button></a>
+        </div>
+        </div>
     </body>
 </html>
