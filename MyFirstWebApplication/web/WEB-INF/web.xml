@@ -12,6 +12,10 @@
         <servlet-name>PrimeNumberServlet</servlet-name>
         <servlet-class>sit.int303.first.servlet.PrimeNumberServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProductListServlet</servlet-name>
+        <servlet-class>sit.int303.first.servlet.ProductListServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimpleCalculatorServlet</servlet-name>
         <url-pattern>/SimpleCalc</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>PrimeNumberServlet</servlet-name>
         <url-pattern>/PrimeNumber</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductListServlet</servlet-name>
+        <url-pattern>/ProductList</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
