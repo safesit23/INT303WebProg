@@ -1,10 +1,9 @@
 <%-- 
-    Document   : ProductList
-    Created on : Aug 8, 2018, 3:23:03 PM
+    Document   : ShowCart
+    Created on : Aug 9, 2018, 4:04:13 PM
     Author     : INT303
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -45,46 +44,32 @@
         </nav>
         <div class="container">
             <div class="container" align="center" style="padding: 20px;">
-                <h1>--Product List--</h1>
-            </div>
-            <div>
-                <h5>Total Price = ${cart.totalPrice}</h5>
+                <h1>--Show Cart--</h1>
             </div>
             <table id="example" class="table">
                 <thead>
-                <th>Image</th>
                 <th>No</th>
                 <th>Product Code</th>
                 <th>Product name</th>
-                <th>Product Line</th>
-                <th>Scale</th>
-                <th>Price</th>
-                <th>Add to Cart</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
                 </thead>
                 <!-- Loop -->
-                <c:forEach items="${products}" var="p" varStatus="vs">
+                <c:forEach items="${cart.lineItems}" var="c" varStatus="vs">
                     <tr>
-                        <td><img src="model-images/${p.productCode}.jpg" width="120"</td>
                         <td>${vs.count}</td>
-                        <td>${p.productCode}</td>
-                        <td>${p.productName}</td>
-                        <td>${p.productLine}</td>
-                        <td>${p.productScale}</td>
-                        <td>${p.msrp}</td>
-                        <!--sent query string-->
-                        <td><a href="AddItemToCart?productCode=${p.productCode}">
-                                <input type="button" value="Add To Card"/>
-                            </a>
-                            <!--UsePOSTMethod-->
-<!--                            <form action="AddItemToCart" method="post">
-                                <input type="hidden" value="${p.productCode}" name="productCode"/>
-                                <input type="submit" value="Add To Cart(POST)"/>
-                            </form>
--->
-                        </td>
+                        <td>${c.product.productCode}</td>
+                        <td>${c.product.productName}</td>
+                        <td>${c.product.msrp}</td>
+                        <td>${c.quantity}</td>
+                        <td>${c.totalPrice}</td>
                     </tr>
                 </c:forEach>
             </table>
+            <div>
+                <h2>Total Price = ${cart.totalPrice}</h2>
+            </div>
         </div>
         <script>
             $(document).ready(function () {
@@ -92,7 +77,7 @@
             });
         </script>
         <div id="buttonFooter" class="container" align="center">
-            <a href="/MyFirst/index.html"><button class="btn btn-info">Back to menu</button></a>
+            <a href="ProductList"><button class="btn btn-info">Back to Shopping</button></a>
         </div>
     </body>
 </html>

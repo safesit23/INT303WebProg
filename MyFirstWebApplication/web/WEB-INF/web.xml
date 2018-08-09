@@ -20,6 +20,10 @@
         <servlet-name>AddItemToCartServlet</servlet-name>
         <servlet-class>sit.int303.first.servlet.AddItemToCartServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ShowcartServlet</servlet-name>
+        <servlet-class>sit.int303.first.servlet.ShowCartServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimpleCalculatorServlet</servlet-name>
         <url-pattern>/SimpleCalc</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>AddItemToCartServlet</servlet-name>
         <url-pattern>/AddItemToCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowcartServlet</servlet-name>
+        <url-pattern>/ShowCart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
