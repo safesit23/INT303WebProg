@@ -73,8 +73,13 @@
                         <td>${p.msrp}</td>
                         <!--sent query string-->
                         <td><a href="AddItemToCart?productCode=${p.productCode}">
-                                <input type="button" value="Add To Card"/>
+                                <input type="button" value="Add To Card(GET)"/>
                             </a>
+                            <!--UsePOSTMethod-->
+                            <form action="AddItemToCart" method="post">
+                                <input type="hidden" value="${p.productCode}" name="productCode"/>
+                                <input type="submit" value="Add To Cart(POST)"/>
+                            </form>
                         </td>
                     </tr>
                 </c:forEach>
