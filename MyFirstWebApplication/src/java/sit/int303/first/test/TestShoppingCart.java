@@ -52,7 +52,7 @@ public class TestShoppingCart {
                     line.getQuantity(),
                     line.getTotalPrice());
         }
-        System.out.print("<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>\n");
+        System.out.println("<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>\n");
         
         cart.remove(p);
         System.out.println("----remove product 2-----");
