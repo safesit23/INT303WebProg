@@ -57,14 +57,14 @@
                 <th>Total Price</th>
                 </thead>
                 <!-- Loop -->
-                <c:forEach items="${cart.lineItems}" var="c" varStatus="vs">
+                <c:forEach items="${cart.lineItems}" var="lineItem" varStatus="vs">
                     <tr>
                         <td>${vs.count}</td>
-                        <td>${c.product.productCode}</td>
-                        <td>${c.product.productName}</td>
-                        <td>${c.product.msrp}</td>
-                        <td>${c.quantity}</td>
-                        <td>${c.totalPrice}</td>
+                        <td>${lineItem.product.productCode}</td>
+                        <td>${lineItem.product.productName}</td>
+                        <td>${lineItem.product.msrp}</td>
+                        <td>${lineItem.quantity}</td>
+                        <td>${lineItem.totalPrice}</td>
                     </tr>
                 </c:forEach>
             </table>
