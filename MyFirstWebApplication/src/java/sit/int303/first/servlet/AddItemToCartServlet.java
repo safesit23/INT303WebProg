@@ -46,8 +46,8 @@ public class AddItemToCartServlet extends HttpServlet {
         //ใน ProductMockup มี method ที่ให้ข้อมูล Product
         Product p = ProductMockup.getProduct(productCode);
         cart.add(p);
-        getServletContext().getRequestDispatcher("/ProductList").forward(request, response);
-        System.out.println(cart.getTotalQuantity());
+        //getServletContext().getRequestDispatcher("/ProductList").forward(request, response);
+        response.sendRedirect("ProductList");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
