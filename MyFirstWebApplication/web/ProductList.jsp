@@ -53,6 +53,7 @@
                 <th>Product Line</th>
                 <th>Scale</th>
                 <th>Price</th>
+                <th>Add to Cart</th>
                 </thead>
                 <!-- Loop -->
                 <c:forEach items="${products}" var="p" varStatus="vs">
@@ -64,6 +65,11 @@
                         <td>${p.productLine}</td>
                         <td>${p.productScale}</td>
                         <td>${p.msrp}</td>
+                        <!--sent query string-->
+                        <td><a href="AddItemToCart?productCode=${p.productCode}">
+                                <input type="button" value="Add To Card"/>
+                            </a>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>
