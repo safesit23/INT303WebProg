@@ -38,11 +38,17 @@
                     <li><a href="TestRequestParam">3.TestRequestParam</a></li>
                     <li class="active"><a href="ProductList">4.Our Product</a></li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> CART (${cart.totalQuantity})  </a></li>
+                </ul>
             </div>
         </nav>
         <div class="container">
             <div class="container" align="center" style="padding: 20px;">
                 <h1>--Product List--</h1>
+            </div>
+            <div>
+                <h5>Total Price = ${cart.totalPrice}</h5>
             </div>
             <table id="example" class="table">
                 <thead>

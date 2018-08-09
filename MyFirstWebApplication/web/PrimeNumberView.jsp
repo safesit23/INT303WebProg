@@ -32,6 +32,9 @@
                     <li><a href="TestRequestParam">3.TestRequestParam</a></li>
                     <li><a href="ProductList">4.Our Product</a></li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> CART (${cart.totalQuantity})  </a></li>
+                </ul>
             </div>
         </nav>
         <h1>Prime Number Application::</h1><hr><br>
