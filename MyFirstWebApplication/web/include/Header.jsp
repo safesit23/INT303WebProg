@@ -6,21 +6,12 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<table class="table">
-    <tr>
-        <td><h1>${param.title}</h1></td>
-        <td>
-            <c:if test="${cart!=null}">
-                <a href="ShowCart">Your cart: (${cart.totalQuantity})</a>
-            </c:if>
-                &nbsp;
-                <c:choose>
-                    <c:when test="${sessionScope.user!=null}">
-                        Hello ${sessionScope.user.name}
-                    </c:when>
-                    <c:otherwise>Hello Guest</c:otherwise>
-                </c:choose>
-        </td>
-    </tr>
-</table>
-
+<c:choose>
+    <c:when test="${sessionScope.user!=null}">
+        <li><a href=#><span class="glyphicon glyphicon-user"> Hello ${sessionScope.user.name}</span></a></li>
+    </c:when>
+            <c:otherwise><li><a href=#><span class="glyphicon glyphicon-user"> HelloGuest</span></a></li></c:otherwise>
+    </c:choose>
+    <c:if test="${cart!=null}">
+    <li><a href="ShowCart"><span class="glyphicon glyphicon-shopping-cart"></span> CART (${cart.totalQuantity})</a></li>
+    </c:if>
