@@ -55,8 +55,10 @@
                 <th>Unit Price</th>
                 <th>Quantity</th>
                 <th>Total Price</th>
+                <th>Remove</th>
                 </thead>
                 <!-- Loop -->
+                <!--get list line items from cart-->
                 <c:forEach items="${cart.lineItems}" var="lineItem" varStatus="vs">
                     <tr>
                         <td>${vs.count}</td>
@@ -65,6 +67,9 @@
                         <td>${lineItem.product.msrp}</td>
                         <td>${lineItem.quantity}</td>
                         <td>${lineItem.totalPrice}</td>
+                        <td><a href="RemoveItemFromCart?productCode=${lineItem.product.productCode}">
+                                <input type="button" value="Remove from cart"/>
+                            </a></td>
                     </tr>
                 </c:forEach>
             </table>
