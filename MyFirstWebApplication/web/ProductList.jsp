@@ -44,6 +44,7 @@
             </div>
         </nav>
         <div class="container">
+            <jsp:include page="include/Header.jsp?ttle=Product Listing::"/>
             <div class="container" align="center" style="padding: 20px;">
                 <h1>--Product List--</h1>
             </div>
