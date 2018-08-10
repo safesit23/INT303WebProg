@@ -35,10 +35,16 @@ public class ShowCartServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
-        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-        if (cart != null) {
-            getServletContext().getRequestDispatcher("/ShowCart.jsp").forward(request, response);
+        if (session != null) {
+            ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+            if (cart != null) {
+                getServletContext().getRequestDispatcher("/ShowCart.jsp").forward(request, response);
+                //use return because cannot forward 2 pages
+                return;
+            }
         }
+        //if session == null will go to  index.html
+        getServletContext().getRequestDispatcher("/index.html").forward(request, response);
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
