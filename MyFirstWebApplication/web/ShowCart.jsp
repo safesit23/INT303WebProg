@@ -68,7 +68,7 @@
                         <td>${lineItem.quantity}</td>
                         <td>${lineItem.totalPrice}</td>
                         <td><a href="RemoveItemFromCart?productCode=${lineItem.product.productCode}">
-                                <input type="button" value="Remove from cart"/>
+                                <span class="glyphicon glyphicon-remove"></span>
                             </a></td>
                     </tr>
                 </c:forEach>
