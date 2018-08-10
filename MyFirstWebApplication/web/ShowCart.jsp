@@ -4,6 +4,7 @@
     Author     : INT303
 --%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -80,7 +81,7 @@
                 </c:forEach>
             </table>
             <div>
-                <h2>Total Price = ${cart.totalPrice}</h2>
+                <h2>Total Price = <fmt:formatNumber value="${cart.totalPrice}" pattern="#,###.00"/></h2>
             </div>
         </div>
         <script>
