@@ -43,8 +43,9 @@ public class ShowCartServlet extends HttpServlet {
                 return;
             }
         }
-        //if session == null will go to  index.html
-        getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+        //if session == null will go to error
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+//        getServletContext().getRequestDispatcher("/ErrorInfo.html").forward(request, response);
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

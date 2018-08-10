@@ -61,4 +61,8 @@
             30
         </session-timeout>
     </session-config>
+    <error-page>
+        <error-code>400</error-code>
+        <location>/ErrorInfo.html</location>
+    </error-page>
 </web-app>
