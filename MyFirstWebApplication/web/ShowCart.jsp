@@ -57,10 +57,16 @@
                 <th>Total Price</th>
                 <th>Remove</th>
                 </thead>
+                
+                <!--use c:set-->
+                <c:set var="items" value="${sessionScope.cart.lineItems}"/>
+                <c:set var="colorX" value="green"/>
+                <c:set var="colorY" value="blue"/>
+                
                 <!-- Loop -->
                 <!--get list line items from cart-->
                 <c:forEach items="${cart.lineItems}" var="lineItem" varStatus="vs">
-                    <tr>
+                    <tr style="color: ${vs.count%2==1?colorX:colorY}">
                         <td>${vs.count}</td>
                         <td>${lineItem.product.productCode}</td>
                         <td>${lineItem.product.productName}</td>
