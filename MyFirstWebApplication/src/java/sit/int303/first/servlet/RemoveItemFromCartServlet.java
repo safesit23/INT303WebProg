@@ -31,13 +31,18 @@ public class RemoveItemFromCartServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(true);
-        //Down Casting เมื่อรับ Attribute มา
-        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-        String productCode = request.getParameter("productCode");
-        cart.remove(productCode);
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            //Down Casting เมื่อรับ Attribute มา
+            ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+            if (cart != null) {
+                String productCode = request.getParameter("productCode");
+                cart.remove(productCode);
+                response.sendRedirect("ShowCart");
+                return;
+            }
+        }
         response.sendRedirect("ProductList");
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
