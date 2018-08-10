@@ -39,12 +39,11 @@
                     <li class="active"><a href="ProductList">4.Our Product</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="ShowCart"><span class="glyphicon glyphicon-shopping-cart"></span> CART (${cart.totalQuantity})  </a></li>
+                    <jsp:include page="include/Header.jsp"/>
                 </ul>
             </div>
         </nav>
         <div class="container">
-            <jsp:include page="include/Header.jsp?ttle=Product Listing::"/>
             <div class="container" align="center" style="padding: 20px;">
                 <h1>--Product List--</h1>
             </div>
