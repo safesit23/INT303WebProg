@@ -61,8 +61,8 @@
                 
                 <!--use c:set-->
                 <c:set var="items" value="${sessionScope.cart.lineItems}"/>
-                <c:set var="colorX" value="green"/>
-                <c:set var="colorY" value="blue"/>
+                <c:set var="colorX" value="DodgerBlue"/>
+                <c:set var="colorY" value="SlateBlue"/>
                 
                 <!-- Loop -->
                 <!--get list line items from cart-->
