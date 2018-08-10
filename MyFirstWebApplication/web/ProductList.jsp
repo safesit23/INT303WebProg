@@ -73,7 +73,7 @@
                         <td>${p.msrp}</td>
                         <!--sent query string-->
                         <td><a href="AddItemToCart?productCode=${p.productCode}">
-                                <input type="button" value="Add To Card"/>
+                                <input type="button" value="Add To Cart"/>
                             </a>
                             <!--UsePOSTMethod-->
 <!--                            <form action="AddItemToCart" method="post">
