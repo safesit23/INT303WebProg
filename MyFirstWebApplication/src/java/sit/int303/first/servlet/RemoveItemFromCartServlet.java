@@ -33,9 +33,10 @@ public class RemoveItemFromCartServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         if (session != null) {
-            //Down Casting เมื่อรับ Attribute มา
+            //get attr cart from session
             ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
             if (cart != null) {
+                //get parameter product code to remove product from cart
                 String productCode = request.getParameter("productCode");
                 cart.remove(productCode);
                 response.sendRedirect("ShowCart");
