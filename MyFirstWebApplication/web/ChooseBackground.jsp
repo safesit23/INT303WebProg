@@ -18,14 +18,17 @@
             <jsp:include page="include/Header.jsp"/>
         </nav>    
             <form action="ChooseBackground" method="post">
-                <input type="radio" name="bgColor" value="dark" />Dark 
-                <input type="text" size="3" disabled style="background-color: slategray" />
+                <input type="radio" name="bgColor" value="#232324" />Dark 
+                <input type="text" size="3" disabled style="background-color: #232324" />
                 <br>
-                <input type="radio" name="bgColor" value="navy" />Navy
-                <input type="text" size="3" disabled style="background-color: navy" />
+                <input type="radio" name="bgColor" value="#260D02" />Brown
+                <input type="text" size="3" disabled style="background-color: #260D02" />
                 <br>
-                <input type="radio" name="bgColor" value="silver" />Silver 
-                <input type="text" size="3" disabled style="background-color: silver" />
+                <input type="radio" name="bgColor" value="#172E18" />Green 
+                <input type="text" size="3" disabled style="background-color: #172E18" />
+                <br>
+                <input type="radio" name="bgColor" value="#050E54" />blue 
+                <input type="text" size="3" disabled style="background-color: #050E54" />
                 <br>
                 <input type="submit">
             </form>    
