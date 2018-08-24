@@ -37,7 +37,7 @@ public class ChooseBackgroundServlet extends HttpServlet {
             ck.setMaxAge(60*60*24*8); //8 Days
             response.addCookie(ck);
             //Want to know before open index.html
-            response.sendRedirect("index.html");
+            response.sendRedirect("ChooseBackground.jsp");
         }else{
             getServletContext().getRequestDispatcher("/ChooseBackground.jsp").forward(request, response);
         }
