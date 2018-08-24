@@ -8,10 +8,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <div class="container-fluid" style="background-color: ${cookie.bgColor.value}">
-    <div class="navbar-header">
-        <a class="navbar-brand">INT303 WebProgramming</a>
+    <div class="navbar-header" >
+        <a class="navbar-brand" >INT303 WebProgramming</a>
     </div>
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav" >
         <li class="active"><a href="/MyFirst/index.html">Home</a></li>
         <li><a href="PrimeNumber">1.Prime Number</a></li>
         <li><a href="/MyFirst/CalculatorForm.html">2.Simple Calculator</a></li>
