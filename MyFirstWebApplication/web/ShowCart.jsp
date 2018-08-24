@@ -23,9 +23,6 @@
             body{
                 background-color: #FFFDFA;
             }
-            #buttonFooter{
-                padding: 25px;
-            }
         </style>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -38,6 +35,7 @@
                     <li><a href="/MyFirst/CalculatorForm.html">2.Simple Calculator</a></li>
                     <li><a href="TestRequestParam">3.TestRequestParam</a></li>
                     <li class="active"><a href="ProductList">4.Our Product</a></li>
+                    <li><a href="ChooseBackground">5. Choose Background</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <jsp:include page="include/Header.jsp"/>

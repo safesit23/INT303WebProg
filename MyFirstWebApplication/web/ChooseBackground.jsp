@@ -1,25 +1,22 @@
+<%-- 
+    Document   : ChooseBackground
+    Created on : Aug 24, 2018, 9:52:43 AM
+    Author     : INT303
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>60130500009</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
     </head>
     <body>
         <style>
             body{
-                font-family: sans-serif;
                 background-color: #FFFDFA;
-            }
-            h1{
-                font-size: 4em;
             }
         </style>
         <nav class="navbar navbar-inverse">
@@ -35,18 +32,24 @@ and open the template in the editor.
                     <li><a href="ProductList">4.Our Product</a></li>
                     <li><a href="ChooseBackground">5. Choose Background</a></li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <jsp:include page="include/Header.jsp"/>
+                </ul>
             </div>
         </nav>
-        <div class="container" align="center">
-        <h1>Program MENU ::</h1>
-        <a href="PrimeNumber"><button class="btn btn-primary btn-lg">1. Prime Number Checker</button></a><br>
-        <a href="/MyFirst/CalculatorForm.html"><button class="btn btn-info btn-lg">2. Simple Calculator</button></a><br>
-        <a href="TestRequestParam"><button class="btn btn-success btn-lg">3. Test Request Parameter</button></a><br>
-        <a href="ProductList"><button class="btn btn-warning btn-lg">4. Our Product</button></a><br>
-        <a href="ChooseBackground"><button class="btn btn-info btn-lg">5. Choose Background</button></a><br>
-        <br>
-        <p>Cr. Jatawat Xie 60130500009</p>
+        <div style="padding: 20px;">        
+            <form  action="" >
+                <input type="radio" name="bgColor" value="dark" />Dark 
+                <input type="text" size="3" disabled style="background-color: slategray" />
+                <br>
+                <input type="radio" name="bgColor" value="navy" />Navy
+                <input type="text" size="3" disabled style="background-color: navy" />
+                <br>
+                <input type="radio" name="bgColor" value="silver" />Silver 
+                <input type="text" size="3" disabled style="background-color: silver" />
+                <br>
+            </form>    
         </div>
-        
+        <h1>Test!</h1>
     </body>
 </html>
