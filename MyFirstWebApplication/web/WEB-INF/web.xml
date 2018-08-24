@@ -28,6 +28,10 @@
         <servlet-name>RemoveItemFromCartServlet</servlet-name>
         <servlet-class>sit.int303.first.servlet.RemoveItemFromCartServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ChooseBackgroundServlet</servlet-name>
+        <servlet-class>sit.int303.first.servlet.ChooseBackgroundServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimpleCalculatorServlet</servlet-name>
         <url-pattern>/SimpleCalc</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>RemoveItemFromCartServlet</servlet-name>
         <url-pattern>/RemoveItemFromCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChooseBackgroundServlet</servlet-name>
+        <url-pattern>/ChooseBackground</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
