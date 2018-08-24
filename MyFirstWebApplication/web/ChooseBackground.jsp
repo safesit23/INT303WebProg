@@ -19,6 +19,9 @@
             #bgColor{
                 padding: 25px;
             }
+            .colorbox{
+                height: 300px;
+            }
         </style>
         <nav class="navbar navbar-inverse">
             <jsp:include page="include/Header.jsp"/>
@@ -26,27 +29,43 @@
         <div id="bgColor">
             <h1 align="center">Change Background Color</h1>
             <form action="ChooseBackground" method="post">
-                <input type="radio" name="bgColor" value="#232324" 
-                       ${cookie.bgColor.value == "#232324" ? "checked": ""} 
-                       />Dark 
-                <input type="text" size="3" disabled style="background-color: #232324" />
-                <br>
-                <input type="radio" name="bgColor" value="#450000" 
-                       ${cookie.bgColor.value == "#450000" ? "checked": ""} 
-                       />Brown
-                <input type="text" size="3" disabled style="background-color: #450000" />
-                <br>
-                <input type="radio" name="bgColor" value="#172E18" 
-                       ${cookie.bgColor.value == "#172E18" ? "checked": ""} 
-                       />Green 
-                <input type="text" size="3" disabled style="background-color: #172E18" />
-                <br>
-                <input type="radio" name="bgColor" value="#050E54" 
-                       ${cookie.bgColor.value == "#050E54" ? "checked": ""}
-                       />blue 
-                <input type="text" size="3" disabled style="background-color: #050E54" />
-                <br>
-                <input type="submit">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3 colorbox" style="background-color: #232324">
+                        </div>
+                        <div class="col-sm-3 colorbox" style="background-color: #450000">
+                        </div>
+                        <div class="col-sm-3 colorbox" style="background-color: #172E18">
+                        </div>
+                        <div class="col-sm-3 colorbox" style="background-color: #050E54">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3" >
+                            <input type="radio" name="bgColor" value="#232324" 
+                                   ${cookie.bgColor.value == "#232324" ? "checked": ""} 
+                                   />Dark 
+                        </div>
+                        <div class="col-sm-3" >
+                            <input type="radio" name="bgColor" value="#450000" 
+                                   ${cookie.bgColor.value == "#450000" ? "checked": ""} 
+                                   />Brown
+                        </div>
+                        <div class="col-sm-3" >
+                            <input type="radio" name="bgColor" value="#172E18" 
+                                   ${cookie.bgColor.value == "#172E18" ? "checked": ""} 
+                                   />Green 
+                        </div>
+                        <div class="col-sm-3" >
+                            <input type="radio" name="bgColor" value="#050E54" 
+                                   ${cookie.bgColor.value == "#050E54" ? "checked": ""}
+                                   />blue 
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit">
+                </div>
             </form>
             <hr>
             Session ID: ${cookie.JSESSIONID.value}
