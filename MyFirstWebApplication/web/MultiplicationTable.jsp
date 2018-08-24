@@ -27,21 +27,7 @@
             }
         </style>
         <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand">INT303 WebProgramming</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="/MyFirst/index.html">Home</a></li>
-                    <li><a href="PrimeNumber">1.Prime Number</a></li>
-                    <li><a href="/MyFirst/CalculatorForm.html">2.Simple Calculator</a></li>
-                    <li><a href="TestRequestParam">3.TestRequestParam</a></li>
-                    <li><a href="ProductList">4.Our Product</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="ShowCart"><span class="glyphicon glyphicon-shopping-cart"></span> CART (${cart.totalQuantity})  </a></li>
-                </ul>
-            </div>
+             <jsp:include page="include/Header.jsp"/>
         </nav>
         <!------------------------Code----------------->
         <div align="center" class="multiTable">

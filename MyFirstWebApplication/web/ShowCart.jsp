@@ -25,22 +25,7 @@
             }
         </style>
         <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand">INT303 WebProgramming</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="/MyFirst/index.html">Home</a></li>
-                    <li><a href="PrimeNumber">1.Prime Number</a></li>
-                    <li><a href="/MyFirst/CalculatorForm.html">2.Simple Calculator</a></li>
-                    <li><a href="TestRequestParam">3.TestRequestParam</a></li>
-                    <li class="active"><a href="ProductList">4.Our Product</a></li>
-                    <li><a href="ChooseBackground">5. Choose Background</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <jsp:include page="include/Header.jsp"/>
-                </ul>
-            </div>
+             <jsp:include page="include/Header.jsp"/>
         </nav>
         <div class="container">
             <div class="container" align="center" style="padding: 20px;">
