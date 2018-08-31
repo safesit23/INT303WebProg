@@ -32,6 +32,10 @@
         <servlet-name>ChooseBackgroundServlet</servlet-name>
         <servlet-class>sit.int303.first.servlet.ChooseBackgroundServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetProductServlet</servlet-name>
+        <servlet-class>sit.int303.first.servlet.GetProductServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimpleCalculatorServlet</servlet-name>
         <url-pattern>/SimpleCalc</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>ChooseBackgroundServlet</servlet-name>
         <url-pattern>/ChooseBackground</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetProductServlet</servlet-name>
+        <url-pattern>/GetProduct</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
