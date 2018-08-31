@@ -23,6 +23,7 @@
             </tr>
             <tr>
                 <td>Product Line</td>
+                <!--Aggregation จึงต้องเรียกอีกรอบ-->
                 <td>${product.productline.productline}</td>
             </tr>
             <tr>
