@@ -8,11 +8,17 @@ package sit.int303.first.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import sit.int303.mockup.model.Product;
+import javax.transaction.UserTransaction;
+import sit.int303.first.jpa.model.Product;
+import sit.int303.first.jpa.model.controller.ProductJpaController;
+//import sit.int303.mockup.model.Product;
 import sit.int303.mockup.model.ProductMockup;
 
 /**
@@ -20,7 +26,11 @@ import sit.int303.mockup.model.ProductMockup;
  * @author INT303
  */
 public class ProductListServlet extends HttpServlet {
-
+    @PersistenceUnit(unitName = "MyFirstWebAppPU")
+    EntityManagerFactory emf;
+    
+    @Resource
+    UserTransaction utx;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -32,11 +42,14 @@ public class ProductListServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String fileLocation = getServletContext().getRealPath("/");
-        String absoluteFileName = fileLocation+"WEB-INF\\products.txt";
+        //String fileLocation = getServletContext().getRealPath("/");
+        //String absoluteFileName = fileLocation+"WEB-INF\\products.txt";
         //System.out.println(absoluteFileName);
-        ProductMockup.setFileLocation(absoluteFileName);
-        List<Product> products = ProductMockup.getProducts();
+        //ProductMockup.setFileLocation(absoluteFileName);
+        //List<Product> products = ProductMockup.getProducts();
+        ProductJpaController productJpaCtrl = new ProductJpaController(utx, emf);
+        // Use Product from jpa
+        List<Product> products = productJpaCtrl.findProductEntities();
         request.setAttribute("products", products);
         getServletContext().getRequestDispatcher("/ProductList.jsp").forward(request, response);
     }
