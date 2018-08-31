@@ -52,7 +52,7 @@
                     <tr>
                         <td><img src="model-images/${p.productCode}.jpg" width="120"</td>
                         <td>${vs.count}</td>
-                        <td>${p.productCode}</td>
+                        <td><a href="GetProduct?productcode=${p.productCode}">${p.productCode}</a></td>
                         <td>${p.productName}</td>
                         <td>${p.productLine}</td>
                         <td>${p.productScale}</td>
