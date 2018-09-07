@@ -22,9 +22,9 @@
     <ul class="nav navbar-nav navbar-right">
         <c:choose>
             <c:when test="${sessionScope.user!=null}">
-                <li><a href=#><span class="glyphicon glyphicon-user"> Hello ${sessionScope.user.name}</span></a></li>
+                <li><a href="Logout"><span class="glyphicon glyphicon-user"> Hello ${sessionScope.user.contactfirstname}</span></a></li>
                 </c:when>
-                <c:otherwise><li><a href=#><span class="glyphicon glyphicon-user"> HelloGuest</span></a></li></c:otherwise>
+                <c:otherwise><li><a href="Login"><span class="glyphicon glyphicon-user"> Hello Guest</span></a></li></c:otherwise>
             </c:choose>
             <c:if test="${cart!=null}">
             <li><a href="ShowCart"><span class="glyphicon glyphicon-shopping-cart"></span> CART (${cart.totalQuantity})</a></li>
