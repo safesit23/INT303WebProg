@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.UserTransaction;
+import sit.int303.first.jpa.model.Customer;
+import sit.int303.first.jpa.model.controller.CustomerJpaController;
 
 /**
  *
@@ -41,10 +43,18 @@ public class LoginServlet extends HttpServlet {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         if(userName != null && userName.length()>0 && password != null && password.length()>0){
-            
-        }else{
-            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+            CustomerJpaController customerJpaCtrl = new CustomerJpaController(utx, emf);
+            Customer c = customerJpaCtrl.findCustomer(Integer.valueOf(userName));
+            if(c!=null){
+                if(password.equals(c.getContactfirstname())){
+                    request.getSession().setAttribute("user", c);
+                    getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+                    return;
+                }
+            }
+            request.setAttribute("message", "Invalid username or password !!!");
         }
+        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
