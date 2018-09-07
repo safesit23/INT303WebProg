@@ -32,7 +32,13 @@ public class LoggerFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-    
+        long before = System.currentTimeMillis();
+        
+        chain.doFilter(request, response);
+        
+        long duration = System.currentTimeMillis() - before;
+        String msg = String.format("Servlet Duration: %d milliseconds \n", duration);
+        filterConfig.getServletContext().log(msg);
     }
 
     @Override

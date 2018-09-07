@@ -6,7 +6,7 @@
     </filter>
     <filter-mapping>
         <filter-name>LoggerFilter</filter-name>
-        <servlet-name>ProductListServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
