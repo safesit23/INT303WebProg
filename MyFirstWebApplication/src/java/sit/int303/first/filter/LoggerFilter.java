@@ -15,6 +15,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -37,7 +38,8 @@ public class LoggerFilter implements Filter {
         chain.doFilter(request, response);
         
         long duration = System.currentTimeMillis() - before;
-        String msg = String.format("Servlet Duration: %d milliseconds \n", duration);
+        String url = ((HttpServletRequest)request).getRequestURI();
+        String msg = String.format("%s Duration: %d milliseconds \n",url, duration);
         filterConfig.getServletContext().log(msg);
     }
 
