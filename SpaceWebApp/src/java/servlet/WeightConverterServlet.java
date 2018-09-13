@@ -22,7 +22,14 @@ public class WeightConverterServlet extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //code
+        
+        String name = request.getParameter("name");
+        Double weight = Double.parseDouble(request.getParameter("weight"));
+        
+        request.setAttribute("name", name);
+        request.setAttribute("weight", weight);
+        
+        getServletContext().getRequestDispatcher("/WeightConverterView.jsp").forward(request, response);
         
     }
 
