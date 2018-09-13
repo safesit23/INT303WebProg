@@ -17,7 +17,21 @@
                 text-align: center;
             }
         </style>
-        <h1>Weight Converter</h1>
         
+        <h1>Weight Converter</h1>
+        <form action="WeightConverter" method="post">
+            Name: <input type="text" name="name" /><br>
+            Weight: <input type="number" name="weight" /> kg<br>
+            <input type="submit" value="ENTER">
+        </form>
+        <div>
+            <h5>DATA THAT WE GET:</h5>
+            <p>
+                NAME: ${name}<br>
+                WEIGHT: ${weight} kg
+        </div>
+                
     </body>
 </html>
+
+
