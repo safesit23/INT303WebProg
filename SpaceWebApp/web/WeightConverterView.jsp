@@ -20,8 +20,8 @@
         
         <h1>Weight Converter</h1>
         <form action="WeightConverter" method="post">
-            Name: <input type="text" name="name" /><br>
-            Weight: <input type="number" name="weight" /> kg<br>
+            Name: <input type="text" name="name" required/><br>
+            Weight: <input type="number" name="weight" required/> kg<br>
             <input type="submit" value="ENTER">
         </form>
         <div>
