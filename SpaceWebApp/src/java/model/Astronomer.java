@@ -5,6 +5,9 @@ public class Astronomer {
     private String name;
     private double weight;
 
+    public Astronomer() {
+    }
+
     public Astronomer(String name, double weight) {
         this.name = name;
         this.weight = weight;
