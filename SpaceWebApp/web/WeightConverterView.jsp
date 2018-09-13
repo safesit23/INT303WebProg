@@ -27,8 +27,9 @@
         <div>
             <h5>DATA THAT WE GET:</h5>
             <p>
-                NAME: ${name}<br>
-                WEIGHT: ${weight} kg
+                NAME: ${ast.name}<br>
+                WEIGHT: ${ast.weight} kg<br>
+                <b>Convert = ${ast.result}</b>
         </div>
                 
     </body>
