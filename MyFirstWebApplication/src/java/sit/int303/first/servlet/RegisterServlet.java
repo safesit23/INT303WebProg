@@ -30,11 +30,13 @@ import sit.int303.first.jpa.model.controller.exceptions.RollbackFailureException
  * @author jatawatsafe
  */
 public class RegisterServlet extends HttpServlet {
-    @PersistenceUnit(unitName="MyFirstWebAppPU")
+
+    @PersistenceUnit(unitName = "MyFirstWebAppPU")
     EntityManagerFactory emf;
-    
+
     @Resource
     UserTransaction utx;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -46,24 +48,26 @@ public class RegisterServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        password = cryptWithMD5(password).substring(0,24);
-        Register register = new Register(email, password);
-        RegisterJpaController regJpaCtrl = new RegisterJpaController(utx, emf);
-        try {
-            regJpaCtrl.create(register);
-            
-        } 
-        catch (RollbackFailureException ex) {
-            Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-        catch (Exception ex) {
-            Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
+        if (email != null && password != null) {
+            password = cryptWithMD5(password).substring(0, 24);
+            Register register = new Register(email, password);
+            RegisterJpaController regJpaCtrl = new RegisterJpaController(utx, emf);
+            try {
+                regJpaCtrl.create(register);
+                request.setAttribute("register", register);
+                getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+
+            } catch (RollbackFailureException ex) {
+                Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        getServletContext().getRequestDispatcher("/RegisterForm.jsp").forward(request, response);
     }
-    
+
     public static String cryptWithMD5(String pass) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -80,7 +84,6 @@ public class RegisterServlet extends HttpServlet {
         }
         return null;
     }
-
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
