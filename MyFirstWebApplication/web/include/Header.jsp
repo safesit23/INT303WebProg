@@ -20,6 +20,7 @@
         <li><a href="ChooseBackground">5. Choose Background</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+        <li><a href="Register">Register</a></li>
         <c:choose>
             <c:when test="${sessionScope.user!=null}">
                 <li><a href="Logout"><span class="glyphicon glyphicon-user"> Hello ${sessionScope.user.contactfirstname}</span></a></li>
