@@ -25,6 +25,11 @@ import sit.int303.first.jpa.model.controller.RegisterJpaController;
  */
 public class ActivationServlet extends HttpServlet {
 
+    @PersistenceUnit(unitName = "MyFirstWebAppPU")
+    EntityManagerFactory emf;
+    
+    @Resource
+    UserTransaction utx;
 
     /**
      *
@@ -41,6 +46,21 @@ public class ActivationServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String email = request.getParameter("email");
         String activationkey = request.getParameter("activationkey");
+        if (email != null && activationkey != null) {
+            String message;
+            RegisterJpaController regJpaCtrl = new RegisterJpaController(utx, emf);
+            Register reg = regJpaCtrl.findRegister(email);
+            
+            if (activationkey.equals(reg.getActivatekey())) {
+                reg.setRegdate(new Date());
+                message = "Congratulation !!! Activation Complete";
+            } else {
+                message = "Activation Failed";
+            }
+            
+            request.setAttribute("message", message);
+            getServletContext().getRequestDispatcher("/Activation.jsp").forward(request, response);
+        }
         getServletContext().getRequestDispatcher("/RegisterForm.jsp").forward(request, response);
     }
 
