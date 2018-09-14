@@ -8,6 +8,8 @@ package sit.int303.first.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
@@ -18,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.transaction.UserTransaction;
 import sit.int303.first.jpa.model.Register;
 import sit.int303.first.jpa.model.controller.RegisterJpaController;
+import sit.int303.first.jpa.model.controller.exceptions.RollbackFailureException;
 
 /**
  *
@@ -47,16 +50,20 @@ public class ActivationServlet extends HttpServlet {
         String email = request.getParameter("email");
         String activationkey = request.getParameter("activationkey");
         if (email != null && activationkey != null) {
-            String message;
+            String message ="Activation Failed";
             RegisterJpaController regJpaCtrl = new RegisterJpaController(utx, emf);
             Register reg = regJpaCtrl.findRegister(email);
             
             if (activationkey.equals(reg.getActivatekey())) {
                 reg.setRegdate(new Date());
-                message = "Congratulation !!! Activation Complete";
-            } else {
-                message = "Activation Failed";
-            }
+                try {
+                    regJpaCtrl.edit(reg);
+                    message = "Congratulation !!! Activation Complete";
+                } catch (RollbackFailureException ex) {
+                    Logger.getLogger(ActivationServlet.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
+                    Logger.getLogger(ActivationServlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
             
             request.setAttribute("message", message);
             getServletContext().getRequestDispatcher("/Activation.jsp").forward(request, response);
