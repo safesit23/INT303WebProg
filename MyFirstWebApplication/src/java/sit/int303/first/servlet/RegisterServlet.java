@@ -55,8 +55,6 @@ public class RegisterServlet extends HttpServlet {
         try {
             regJpaCtrl.create(register);
             
-            
-            
         } 
         catch (RollbackFailureException ex) {
             Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
