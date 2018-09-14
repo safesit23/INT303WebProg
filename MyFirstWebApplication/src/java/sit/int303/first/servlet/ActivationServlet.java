@@ -55,7 +55,7 @@ public class ActivationServlet extends HttpServlet {
             Register reg = regJpaCtrl.findRegister(email);
             
             if (activationkey.equals(reg.getActivatekey())) {
-                reg.setRegdate(new Date());
+                reg.setActivatedate(new Date());
                 try {
                     regJpaCtrl.edit(reg);
                     message = "Congratulation !!! Activation Complete";
@@ -69,6 +69,7 @@ public class ActivationServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/Activation.jsp").forward(request, response);
         }
         getServletContext().getRequestDispatcher("/RegisterForm.jsp").forward(request, response);
+    }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
