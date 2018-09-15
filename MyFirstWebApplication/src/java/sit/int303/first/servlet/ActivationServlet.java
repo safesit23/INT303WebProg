@@ -48,13 +48,13 @@ public class ActivationServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String email = request.getParameter("email");
-        String activationkey = request.getParameter("activationkey");
-        if (email != null && activationkey != null) {
+        String activatekey = request.getParameter("activationkey");
+        if (email != null && activatekey != null) {
             String message ="Activation Failed";
             RegisterJpaController regJpaCtrl = new RegisterJpaController(utx, emf);
             Register reg = regJpaCtrl.findRegister(email);
             
-            if (activationkey.equals(reg.getActivatekey())) {
+            if (activatekey.equals(reg.getActivatekey())) {
                 reg.setActivatedate(new Date());
                 try {
                     regJpaCtrl.edit(reg);
