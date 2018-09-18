@@ -24,5 +24,7 @@
             Password: <input type="password" name="password" required />
             <input type="submit" value="SUBMIT" />
         </form>
+        <hr>
+        <div style="color: red">${message}</div>
     </body>
 </html>
