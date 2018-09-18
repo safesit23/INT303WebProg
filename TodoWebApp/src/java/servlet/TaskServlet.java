@@ -61,8 +61,7 @@ public class TaskServlet extends HttpServlet {
             } catch (Exception ex) {
                 Logger.getLogger(TaskServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-            List<Task> taskList = ctrl.findTaskEntities();
-            request.setAttribute("taskList", taskList);
+            //getServletContext().getRequestDispatcher("/Task.jsp").forward(request, response);
             response.sendRedirect("Task");
         } else {
             List<Task> taskList = ctrl.findTaskEntities();
