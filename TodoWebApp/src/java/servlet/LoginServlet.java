@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
             Account acc = ctrl.findAccount(username);
             if (acc != null) {
                 if (cryptPass.equals(acc.getPassword())) {
-                    getServletContext().getRequestDispatcher("Task").forward(request, response);
+                    getServletContext().getRequestDispatcher("/Task").forward(request, response);
                     return;
                 }
             }
