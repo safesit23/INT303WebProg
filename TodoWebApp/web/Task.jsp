@@ -4,6 +4,7 @@
     Author     : jatawatsafe
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,5 +24,19 @@
             New Task: <input type="text" name="todolist" required>
             <input type="submit" value="Add">
         </form>
+        <table>
+            <tr>
+                <td>Date</td>
+                <td>Task</td>
+                <td>Status</td>
+            </tr>
+            <c:forEach items="${taskList}" var="task">
+            <tr>
+                <td>${task.createdate}</td>
+                <td>${task.task}</td>
+                <td>${task.status}</td>
+            </tr>
+            </c:forEach>
+        </table>
     </body>
 </html>
