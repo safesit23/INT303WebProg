@@ -12,6 +12,16 @@
         <title>Login</title>
     </head>
     <body>
+        <style>
+            body{
+                padding: 10px;
+                font-size: 1.2em;
+            }
+        </style>
         <h1>Login</h1>
+        <form action="Login" method="post">
+            Username: <input type="text" name="username" required />
+            Password: <input type="password" name="password" required />
+        </form>
     </body>
 </html>
