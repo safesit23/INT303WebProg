@@ -7,17 +7,34 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.transaction.UserTransaction;
+import model.Account;
+import model.Task;
+import model.controller.TaskJpaController;
 
 /**
  *
  * @author jatawatsafe
  */
 public class TaskServlet extends HttpServlet {
+
+    @PersistenceUnit(unitName = "TodoWebAppPU")
+    EntityManagerFactory emf;
+
+    @Resource
+    UserTransaction utx;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,10 +47,22 @@ public class TaskServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String todolist = request.getParameter("todolist");
-        if(todolist!=null){
-            
-        }else{
+        HttpSession session = request.getSession();
+        Account account = (Account)session.getAttribute("account");
+        String newTask = request.getParameter("todolist");
+        if (newTask != null && newTask.trim().length() > 0) {
+            TaskJpaController ctrl = new TaskJpaController(utx, emf);
+            Task task = new Task(newTask, account);
+            try {
+                System.out.println("-----TRY--------------------------------");
+                ctrl.create(task);
+                System.out.println("----CREATE FINISH--------------------------");
+                
+            } catch (Exception ex) {
+                Logger.getLogger(TaskServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            response.sendRedirect("Task.jsp");
+        } else {
             getServletContext().getRequestDispatcher("/Task.jsp").forward(request, response);
         }
     }
