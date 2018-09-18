@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 import model.Account;
 import model.controller.AccountJpaController;
@@ -44,12 +45,20 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        HttpSession session = request.getSession();
+        Account account = (Account) session.getAttribute("account");
         if (username != null && password != null) {
             String cryptPass = cryptWithMD5(password);
             AccountJpaController ctrl = new AccountJpaController(utx, emf);
             Account acc = ctrl.findAccount(username);
             if (acc != null) {
                 if (cryptPass.equals(acc.getPassword())) {
+                    if (account == null) {
+                        account = new Account();
+                        session.setAttribute("account", account);
+                    }
+                    account.setUsername(username);
+                    account.setPassword(cryptPass);
                     getServletContext().getRequestDispatcher("/Task").forward(request, response);
                     return;
                 }
