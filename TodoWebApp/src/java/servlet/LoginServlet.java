@@ -8,17 +8,28 @@ package servlet;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.transaction.UserTransaction;
+import model.Account;
+import model.controller.AccountJpaController;
 
 /**
  *
  * @author jatawatsafe
  */
 public class LoginServlet extends HttpServlet {
+
+    @PersistenceUnit(unitName = "TodoWebAppPU")
+    EntityManagerFactory emf;
+
+    @Resource
+    UserTransaction utx;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,10 +44,19 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        if(username!=null &&password!=null){
-            
-        }else{
+        if (username != null && password != null) {
+            String cryptPass = cryptWithMD5(password);
+            AccountJpaController ctrl = new AccountJpaController(utx, emf);
+            Account acc = ctrl.findAccount(username);
+            if (acc != null) {
+                if (cryptPass.equals(acc.getPassword())) {
+                    getServletContext().getRequestDispatcher("Task").forward(request, response);
+                    return;
+                }
+            }
             request.setAttribute("message", "Try Again");
+            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+        } else {
             getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
         }
     }
@@ -80,7 +100,7 @@ public class LoginServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-        public static String cryptWithMD5(String pass) {
+    public static String cryptWithMD5(String pass) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] passBytes = pass.getBytes();
