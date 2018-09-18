@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Astronomer;
 
-
 public class WeightConverterServlet extends HttpServlet {
 
     /**
@@ -21,26 +20,28 @@ public class WeightConverterServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String name = request.getParameter("name");
-        Double weight = Double.parseDouble(request.getParameter("weight"));
-        
-        HttpSession session = request.getSession(true);
-        request.setAttribute("name", name);
-        request.setAttribute("weight", weight);
-        Astronomer ast = (Astronomer) session.getAttribute("ast");
-        if(ast==null){
-            ast = new Astronomer();
-            session.setAttribute("ast", ast);
+        String weighttext = request.getParameter("weight");
+        if (name == null && weighttext == null) {
+            getServletContext().getRequestDispatcher("/WeightConverterView.jsp").forward(request, response);
+        } else {
+            double weight = Double.parseDouble(weighttext);
+            HttpSession session = request.getSession(true);
+            request.setAttribute("name", name);
+            request.setAttribute("weight", weight);
+            Astronomer ast = (Astronomer) session.getAttribute("ast");
+            if (ast == null) {
+                ast = new Astronomer();
+                session.setAttribute("ast", ast);
+            }
+            ast.setName(name);
+            ast.setWeight(weight);
+            getServletContext().getRequestDispatcher("/WeightConverterView.jsp").forward(request, response);
         }
-        ast.setName(name);
-        ast.setWeight(weight);
-        
-        getServletContext().getRequestDispatcher("/WeightConverterView.jsp").forward(request, response);
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
