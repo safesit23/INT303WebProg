@@ -18,7 +18,7 @@
                 font-size: 1.2em;
             }
         </style>
-        <h1>User:Steve</h1>
+        <h1>User: ${account.username}</h1>
         <form action="Task" method="post">
             New Task: <input type="text" name="todolist" required>
             <input type="submit" value="Add">
