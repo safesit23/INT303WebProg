@@ -21,7 +21,7 @@
         <h1>User:Steve</h1>
         <form action="Task" method="post">
             New Task: <input type="text" name="todolist" required>
-            <input type="submit">
+            <input type="submit" value="Add">
         </form>
     </body>
 </html>
