@@ -48,21 +48,25 @@ public class TaskServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Account account = (Account)session.getAttribute("account");
+        Account account = (Account) session.getAttribute("account");
         String newTask = request.getParameter("todolist");
+        TaskJpaController ctrl = new TaskJpaController(utx, emf);
         if (newTask != null && newTask.trim().length() > 0) {
-            TaskJpaController ctrl = new TaskJpaController(utx, emf);
             Task task = new Task(newTask, account);
             try {
                 System.out.println("-----TRY--------------------------------");
                 ctrl.create(task);
                 System.out.println("----CREATE FINISH--------------------------");
-                
+
             } catch (Exception ex) {
                 Logger.getLogger(TaskServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-            response.sendRedirect("Task.jsp");
+            List<Task> taskList = ctrl.findTaskEntities();
+            request.setAttribute("taskList", taskList);
+            response.sendRedirect("Task");
         } else {
+            List<Task> taskList = ctrl.findTaskEntities();
+            request.setAttribute("taskList", taskList);
             getServletContext().getRequestDispatcher("/Task.jsp").forward(request, response);
         }
     }
