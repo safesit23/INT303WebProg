@@ -70,6 +70,13 @@ public class Task implements Serializable {
     public Task(Integer taskid) {
         this.taskid = taskid;
     }
+    
+    public Task(String task,Account username) {
+        this.createdate = new Date();
+        this.task = task;
+        this.status = "open" ;
+        this.username = username;
+    }
 
     public Task(Integer taskid, Date createdate, String task, String status) {
         this.taskid = taskid;
