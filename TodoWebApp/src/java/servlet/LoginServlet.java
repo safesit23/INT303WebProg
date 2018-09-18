@@ -71,4 +71,21 @@ public class LoginServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+        public static String cryptWithMD5(String pass) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] passBytes = pass.getBytes();
+            md.reset();
+            byte[] digested = md.digest(passBytes);
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < digested.length; i++) {
+                sb.append(Integer.toHexString(0xff & digested[i]));
+            }
+            return sb.toString();
+        } catch (NoSuchAlgorithmException ex) {
+            System.out.println(ex);
+        }
+        return null;
+    }
+
 }
