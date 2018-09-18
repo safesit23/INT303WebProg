@@ -22,6 +22,7 @@
         <form action="Login" method="post">
             Username: <input type="text" name="username" required />
             Password: <input type="password" name="password" required />
+            <input type="submit" value="SUBMIT" />
         </form>
     </body>
 </html>
