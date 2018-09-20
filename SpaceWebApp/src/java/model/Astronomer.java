@@ -54,7 +54,7 @@ public class Astronomer implements Serializable {
     @Size(min = 1, max = 10)
     @Column(name = "PASSWORD")
     private String password;
-
+    
     public Astronomer() {
     }
 
