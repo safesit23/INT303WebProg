@@ -64,7 +64,7 @@ UserTransaction utx;
             } catch (Exception ex) {
                 Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-            session.setAttribute("valueOfRegister", value);
+            request.setAttribute("valueOfRegister", value);
         }
         getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
     }
