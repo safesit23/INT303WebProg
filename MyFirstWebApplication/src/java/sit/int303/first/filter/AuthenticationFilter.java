@@ -25,27 +25,26 @@ import javax.servlet.http.HttpSession;
 public class AuthenticationFilter implements Filter {
 
     private FilterConfig config;
-    
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-         this.config = filterConfig;
+        this.config = filterConfig;
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        HttpSession session = ((HttpServletRequest)request).getSession(false);  //If not have session, not create
-        if(session==null||session.getAttribute("user")==null){  //if cart not have user
+        HttpSession session = ((HttpServletRequest) request).getSession(false);  //If not have session, not create
+        if (session == null || session.getAttribute("user") == null) {  //if cart not have user
             config.getServletContext().getRequestDispatcher("/Login").forward(request, response);
             return;
-        }else{
+        } else {
             chain.doFilter(request, response);
         }
     }
 
     @Override
     public void destroy() {
-        
+
     }
-    
-    
+
 }
