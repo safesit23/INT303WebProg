@@ -4,6 +4,7 @@
     Author     : jatawatsafe
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,7 +24,24 @@
         <div class="container" style="text-align: center">
             <h1>ADMIN PAGE</h1>
             <hr>
-            Waiting Data
+            <table>
+                <tr>
+                    <td>no.</td>
+                    <td>id</td>
+                    <td>name</td>
+                    <td>email</td>
+                    <td>password</td>
+                </tr>
+                <c:forEach items="${astList}" var="ast" varStatus="vs">
+                    <tr>
+                        <td>${vs.count}</td>
+                        <td>${ast.id}</td>
+                        <td>${ast.name}</td>
+                        <td>${ast.email}</td>
+                        <td>${ast.password}</td>
+                    </tr>
+                </c:forEach>
+            </table>
             <br>
             <a href="/Space/index.html">Home Page</a>
             <a href="WeightConverter">Program</a>
