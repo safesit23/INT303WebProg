@@ -6,17 +6,28 @@
 package servlet;
 
 import java.io.IOException;
+import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.transaction.UserTransaction;
+import model.Astronomer;
+import model.jpa.AstronomerJpaController;
 
 /**
  *
  * @author jatawatsafe
  */
 public class LoginServlet extends HttpServlet {
+@PersistenceUnit (unitName = "SpaceWebAppPU")
+EntityManagerFactory emf;
 
+@Resource
+UserTransaction utx;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -28,6 +39,26 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession(true);
+        String idString = request.getParameter("id");
+        String password = request.getParameter("password");
+        String message = " ";
+        if(idString !=null && password !=null){
+            int id = Integer.parseInt(idString);
+            AstronomerJpaController ctrl = new AstronomerJpaController(utx, emf);
+            Astronomer astronomer = ctrl.findAstronomer(id);
+            if(astronomer !=null){
+                if(astronomer.getPassword().equals(password)){
+                    getServletContext().getRequestDispatcher("/WeightConverter").forward(request, response);
+                }else{
+                    message = "Password incorrect !";
+                }
+            }else{
+                message = "Not have this id !";
+            }
+            session.setAttribute("message", message);
+        }
+        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
         
     }
 
