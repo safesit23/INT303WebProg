@@ -52,8 +52,11 @@ public class LoginServlet extends HttpServlet {
             if (astronomer != null) {
                 if (astronomer.getPassword().equals(password)) {
                     session.setAttribute("astronomer", astronomer);
-                    getServletContext().getRequestDispatcher("/WeightConverter").forward(request, response);
-                    return;
+                    if(astronomer.getName().equals("admin")){
+                        getServletContext().getRequestDispatcher("/Admin").forward(request, response);
+                    }else{
+                        getServletContext().getRequestDispatcher("/WeightConverter").forward(request, response);
+                    }    
                 } else {
                     message = "Password incorrect !";
                 }
