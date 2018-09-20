@@ -36,7 +36,9 @@ public class Authentication implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpSession session = ((HttpServletRequest) request).getSession(false);
+        System.out.println("---------doFilter-----------");
         if(session==null || session.getAttribute("astronomer") ==null){
+            System.out.println("------sent to login-----");
             config.getServletContext().getRequestDispatcher("/Login").forward(request, response);
         }else{
             chain.doFilter(request, response);
