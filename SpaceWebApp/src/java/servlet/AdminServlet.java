@@ -7,16 +7,29 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.transaction.UserTransaction;
+import model.Astronomer;
+import model.jpa.AstronomerJpaController;
 
 /**
  *
  * @author jatawatsafe
  */
 public class AdminServlet extends HttpServlet {
+
+    @PersistenceUnit(unitName = "SpaceWebAppPU")
+    EntityManagerFactory emf;
+    @Resource
+    UserTransaction utx;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,7 +42,14 @@ public class AdminServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/Admin").forward(request, response);
+        HttpSession session = request.getSession();
+        if (session != null) {
+            AstronomerJpaController ctrl = new AstronomerJpaController(utx, emf);
+            List<Astronomer> astList = ctrl.findAstronomerEntities();
+            session.setAttribute("astList", astList);
+        }
+
+        getServletContext().getRequestDispatcher("/Admin.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
