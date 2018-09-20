@@ -49,6 +49,7 @@ UserTransaction utx;
             Astronomer astronomer = ctrl.findAstronomer(id);
             if(astronomer !=null){
                 if(astronomer.getPassword().equals(password)){
+                    session.setAttribute("astronomer", astronomer);
                     getServletContext().getRequestDispatcher("/WeightConverter").forward(request, response);
                 }else{
                     message = "Password incorrect !";
