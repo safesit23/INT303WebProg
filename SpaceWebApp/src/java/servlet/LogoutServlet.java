@@ -30,8 +30,12 @@ public class LogoutServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.invalidate();
+        System.out.println("-------Logout----");
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+            System.out.println("-----Session Invalidate------");
+        }
         getServletContext().getRequestDispatcher("/index.html").forward(request, response);
     }
 
