@@ -26,7 +26,7 @@
         <h3>
             Welcome ${astronomer.name} | 
             <a href="Logout">Logout</a>
-            <a href="Edit">Edit</a>
+            <a href="EditProfile">Edit</a>
         </h3>
         <br>
         <form action="WeightConverter" method="post">
@@ -47,4 +47,5 @@
             </div>
         </c:if>
     </div>
+    <a href="Logout">Logout</a>
 </html>
