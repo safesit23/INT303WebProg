@@ -75,7 +75,8 @@ public class History implements Serializable {
         this.historyid = historyid;
     }
 
-    public History(String method, int amount, Date time, int balance) {
+    public History(Account account,String method, int amount, Date time, int balance) {
+        this.accountid = account;
         this.method = method;
         this.amount = amount;
         this.time = time;
