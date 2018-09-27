@@ -19,5 +19,8 @@
             Pin: <input type="number" name="pin" required><br>
             <input type="submit" value="submit">
         </form>
+        <c:if test="${loginmessage!=null}">
+            <p style="color: red">${loginmessage}</p>
+        </c:if>
     </body>
 </html>
