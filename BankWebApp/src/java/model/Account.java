@@ -105,6 +105,24 @@ public class Account implements Serializable {
     public void setPin(int pin) {
         this.pin = pin;
     }
+    
+    public boolean deposit(int deposit){
+        if(deposit>0){
+            this.balance = this.balance+deposit;
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public boolean withdraw (int withdraw){
+        if(withdraw>0 && withdraw<this.balance){
+            this.balance = this.balance-withdraw;
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     @XmlTransient
     public List<History> getHistoryList() {
