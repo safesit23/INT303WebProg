@@ -6,18 +6,34 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.transaction.UserTransaction;
+import model.Account;
+import model.History;
+import model.controller.AccountJpaController;
+import model.controller.HistoryJpaController;
+import model.controller.exceptions.NonexistentEntityException;
+import model.controller.exceptions.RollbackFailureException;
 
 /**
  *
  * @author jatawatsafe
  */
 public class DepositServlet extends HttpServlet {
-
+@PersistenceUnit (unitName = "BankWebAppPU")
+EntityManagerFactory emf;
+@Resource
+UserTransaction utx;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -29,10 +45,39 @@ public class DepositServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String deposit = request.getParameter("deposit");
-        
-        
+        HttpSession session = request.getSession(false);
+        String depositText = request.getParameter("deposit");
+        Account accSession = (Account) session.getAttribute("account");
+        if(depositText !=null){
+            int deposit = Integer.parseInt(depositText);
+            String message = null;
+            AccountJpaController aCtrl = new AccountJpaController(utx, emf);
+            HistoryJpaController hCtrl = new HistoryJpaController(utx, emf);
+            Account account = aCtrl.findAccount(accSession.getAccountid());
+            if(account !=null){
+                boolean checkDo = account.deposit(deposit);
+                if(checkDo){
+                    History history = new History(account,"deposit", deposit, new Date(), account.getBalance());
+                    try {
+                        aCtrl.edit(account);
+                        hCtrl.create(history);
+                        message = "Deposit Successful";
+                        session.setAttribute("account", account);
+                    } catch (NonexistentEntityException ex) {
+                        Logger.getLogger(DepositServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (RollbackFailureException ex) {
+                        Logger.getLogger(DepositServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (Exception ex) {
+                        Logger.getLogger(DepositServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    } 
+                }else{
+                    message = "Deposit Unsuccessful";
+                }
+                request.setAttribute("message", message);
+            }
+            getServletContext().getRequestDispatcher("/MyAccount.jsp").forward(request, response);
+        }
+        getServletContext().getRequestDispatcher("/Deposit.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
