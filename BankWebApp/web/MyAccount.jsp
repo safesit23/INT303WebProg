@@ -4,6 +4,7 @@
     Author     : jatawatsafe
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +14,9 @@
     </head>
     <body>
         <h1>MyAccount</h1>
+        <c:if test="${message !=null}">
+        <div>${message}</div>
+        </c:if>
         <h2>${account.name}</h2>
         <h2>${account.balance}</h2>
         <br>
