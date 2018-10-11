@@ -22,5 +22,8 @@
         <br>
         <a href="Deposit">Deposit</a><br>
         <a href="Withdraw">Withdraw</a><br>
+        <a href="History">History</a><br>
+        <br>
+        <a href="Logout">Logout</a>
     </body>
 </html>
