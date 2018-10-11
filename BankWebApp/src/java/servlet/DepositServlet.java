@@ -75,7 +75,8 @@ UserTransaction utx;
                 }
                 request.setAttribute("message", message);
             }
-            getServletContext().getRequestDispatcher("/MyAccount.jsp").forward(request, response);
+            response.sendRedirect("MyAccount.jsp");
+            return;
         }
         getServletContext().getRequestDispatcher("/Deposit.jsp").forward(request, response);
     }
