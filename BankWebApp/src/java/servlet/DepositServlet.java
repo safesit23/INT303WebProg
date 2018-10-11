@@ -73,9 +73,9 @@ UserTransaction utx;
                 }else{
                     message = "Deposit Unsuccessful";
                 }
-                request.setAttribute("message", message);
+                session.setAttribute("message", message);
             }
-            response.sendRedirect("MyAccount.jsp");
+            response.sendRedirect("MyAccount");
             return;
         }
         getServletContext().getRequestDispatcher("/Deposit.jsp").forward(request, response);

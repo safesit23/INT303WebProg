@@ -77,9 +77,9 @@ public class WithdrawServlet extends HttpServlet {
                 } else {
                     message = "Withdraw Unsuccessful";
                 }
-                request.setAttribute("message", message);
+                session.setAttribute("message", message);
             }
-            response.sendRedirect("MyAccount.jsp");
+            response.sendRedirect("MyAccount");
             return;
         }
         getServletContext().getRequestDispatcher("/Withdraw.jsp").forward(request, response);
