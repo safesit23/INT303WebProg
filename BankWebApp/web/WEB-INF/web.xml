@@ -20,6 +20,10 @@
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>servlet.LogoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MyAccountServlet</servlet-name>
+        <servlet-class>servlet.MyAccountServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DepositServlet</servlet-name>
         <url-pattern>/Deposit</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyAccountServlet</servlet-name>
+        <url-pattern>/MyAccount</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
