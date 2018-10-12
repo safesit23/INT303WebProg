@@ -30,10 +30,12 @@ import model.controller.exceptions.RollbackFailureException;
  * @author jatawatsafe
  */
 public class DepositServlet extends HttpServlet {
-@PersistenceUnit (unitName = "BankWebAppPU")
-EntityManagerFactory emf;
-@Resource
-UserTransaction utx;
+
+    @PersistenceUnit(unitName = "BankWebAppPU")
+    EntityManagerFactory emf;
+    @Resource
+    UserTransaction utx;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -48,37 +50,41 @@ UserTransaction utx;
         HttpSession session = request.getSession(false);
         String depositText = request.getParameter("deposit");
         Account accSession = (Account) session.getAttribute("account");
-        if(depositText !=null){
-            int deposit = Integer.parseInt(depositText);
-            String message = null;
-            AccountJpaController aCtrl = new AccountJpaController(utx, emf);
-            HistoryJpaController hCtrl = new HistoryJpaController(utx, emf);
-            Account account = aCtrl.findAccount(accSession.getAccountid());
-            if(account !=null){
-                boolean checkDo = account.deposit(deposit);
-                if(checkDo){
-                    History history = new History(account,"deposit", deposit, new Date(), account.getBalance());
-                    try {
-                        aCtrl.edit(account);
-                        hCtrl.create(history);
-                        message = "Deposit Successful";
-                        session.setAttribute("account", account);
-                    } catch (NonexistentEntityException ex) {
-                        Logger.getLogger(DepositServlet.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (RollbackFailureException ex) {
-                        Logger.getLogger(DepositServlet.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (Exception ex) {
-                        Logger.getLogger(DepositServlet.class.getName()).log(Level.SEVERE, null, ex);
-                    } 
-                }else{
-                    message = "Deposit Unsuccessful";
+        if (accSession != null) {
+            if (depositText != null) {
+                int deposit = Integer.parseInt(depositText);
+                String message = null;
+                AccountJpaController aCtrl = new AccountJpaController(utx, emf);
+                HistoryJpaController hCtrl = new HistoryJpaController(utx, emf);
+                Account account = aCtrl.findAccount(accSession.getAccountid());
+                if (account != null) {
+                    boolean checkDo = account.deposit(deposit);
+                    if (checkDo) {
+                        History history = new History(account, "deposit", deposit, new Date(), account.getBalance());
+                        try {
+                            aCtrl.edit(account);
+                            hCtrl.create(history);
+                            message = "Deposit Successful";
+                            session.setAttribute("account", account);
+                        } catch (NonexistentEntityException ex) {
+                            Logger.getLogger(DepositServlet.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (RollbackFailureException ex) {
+                            Logger.getLogger(DepositServlet.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (Exception ex) {
+                            Logger.getLogger(DepositServlet.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    } else {
+                        message = "Deposit Unsuccessful";
+                    }
+                    session.setAttribute("message", message);
                 }
-                session.setAttribute("message", message);
+                response.sendRedirect("MyAccount");
+                return;
             }
-            response.sendRedirect("MyAccount");
-            return;
+            getServletContext().getRequestDispatcher("/Deposit.jsp").forward(request, response);
+        } else {
+            getServletContext().getRequestDispatcher("/index.html").forward(request, response);
         }
-        getServletContext().getRequestDispatcher("/Deposit.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
