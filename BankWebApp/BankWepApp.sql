@@ -17,7 +17,8 @@ CREATE TABLE history (
   balance int NOT NULL,
   PRIMARY KEY (historyid),
   CONSTRAINT accountid_history FOREIGN KEY (accountid) REFERENCES account (accountid) ON DELETE NO ACTION ON UPDATE NO ACTION
-  INSERT INTO history (accountid, method, amount, createdate, balance)  VALUES (1,'deposit',6000,'2018-09-12',6000)
-) ;
+  ) ;
 
-/* Ref from todo_script */
+INSERT INTO history (accountid, method, amount, createdate, balance)  VALUES (1,'deposit',6000,'2018-09-12',6000)
+
+/* Ref from todo_list */
