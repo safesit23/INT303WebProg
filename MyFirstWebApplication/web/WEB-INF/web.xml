@@ -9,20 +9,8 @@
         <filter-class>sit.int303.first.filter.AuthenticationFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>AuthenticationFilter</filter-name>
-        <servlet-name>ProductListServlet</servlet-name>
-        <dispatcher>REQUEST</dispatcher>
-        <dispatcher>FORWARD</dispatcher>
-    </filter-mapping>
-    <filter-mapping>
         <filter-name>LoggerFilter</filter-name>
         <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
-        <dispatcher>FORWARD</dispatcher>
-    </filter-mapping>
-    <filter-mapping>
-        <filter-name>AuthenticationFilter</filter-name>
-        <servlet-name>ChooseBackgroundServlet</servlet-name>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
