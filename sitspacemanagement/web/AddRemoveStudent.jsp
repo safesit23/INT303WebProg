@@ -12,7 +12,7 @@
         <title>ADD/REMOVE Student</title>
     </head>
     <body>
-        <h1>ADD/REMOVE Student</h1>
+        <h1>SitSpaceManagement</h1>
         Page: <a href="AddRemoveStudent.jsp">ADD/REMOVE Student</a> | <a href="AllData.jsp">Show All Data</a>
         
         <h3>Add Student Data</h3>

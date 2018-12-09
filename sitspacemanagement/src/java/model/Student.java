@@ -10,7 +10,7 @@ package model;
  * @author jatawatsafe
  */
 public class Student {
-    private int id;
+    private String id;
     private String name;
     private int score;
     
@@ -18,13 +18,13 @@ public class Student {
         
     }
     
-    public Student(int id, String name, int score){
+    public Student(String id, String name, int score){
         this.id = id;
         this.name = name;
         this.score = score;
     }
     
-    public void setId(int id){
+    public void setId(String id){
         this.id = id;
     }
     
@@ -36,7 +36,7 @@ public class Student {
         this.score = score;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -46,6 +46,20 @@ public class Student {
 
     public int getScore() {
         return score;
+    }
+    
+    public String getCalculateGrade(){
+        if(score>=80){
+            return "A";
+        }else if(score>=70){
+            return "B";
+        }else if(score>=60){
+            return "C";
+        }else if(score>=50){
+            return "D";
+        }else{
+            return "F";
+        }
     }
 
     @Override
