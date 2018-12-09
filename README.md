@@ -10,12 +10,14 @@ https://github.com/safesit23/INT303WebProg/blob/master/MyFirstWebApplication/อ
 
 3. TodoWebApp : แบบฝึกหัดจากห้องเรียน
 
-## สรุปและแบบฝึกหัด
+## Review and Exercise
 
 1. ไฟล์สรุป Part Lab วิชา INT303 Web Programming
 https://github.com/safesit23/INT303WebProg/blob/master/%E0%B8%AA%E0%B8%A3%E0%B8%B8%E0%B8%9B%20INT303%20WebPro(LAB)%20by%20Safe_IT23.pdf
 
 2. โจทย์ SITSPACE MANAGEMENT
 https://github.com/safesit23/INT303WebProg/blob/master/Practice%20INT303%20by%20SAFEIT23.pdf
+
+2.1. KEY : https://github.com/safesit23/INT303WebProg/tree/master/sitspacemanagement
 
 **คำแนะนำ ให้โหลดไฟล์ PDF ลงมาดู
