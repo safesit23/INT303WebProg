@@ -8,6 +8,10 @@
         <servlet-name>RemoveServlet</servlet-name>
         <servlet-class>servlet.RemoveServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TestParamServlet</servlet-name>
+        <servlet-class>servlet.TestParamServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddServlet</servlet-name>
         <url-pattern>/AddServlet</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>RemoveServlet</servlet-name>
         <url-pattern>/RemoveServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestParamServlet</servlet-name>
+        <url-pattern>/TestParamServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
