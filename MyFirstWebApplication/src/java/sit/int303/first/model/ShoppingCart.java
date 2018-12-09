@@ -24,6 +24,7 @@ public class ShoppingCart implements Serializable{
         cart = new HashMap();
         
     }
+    
     public void add(Product p){
         LineItem line= cart.get(p.getProductCode());
         //ถ้าสินค้านั้นไม่เคยมีอยู่
