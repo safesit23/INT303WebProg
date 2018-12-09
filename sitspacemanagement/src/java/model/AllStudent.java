@@ -31,10 +31,10 @@ public class AllStudent {
         }
     }
     
-    public boolean remove(Student std){
-        Student stdInMap = allData.get(std.getId());
+    public boolean remove(String id){
+        Student stdInMap = allData.get(id);
         if(stdInMap!=null){
-            allData.remove(std.getId());
+            allData.remove(id);
             return true;
         }else{
             return false;

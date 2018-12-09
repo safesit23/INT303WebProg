@@ -13,9 +13,20 @@
         <title>AllData</title>
     </head>
     <body>
+        <style>
+            table{
+                border-spacing: 0px;
+            }
+            td, th{
+                border: 1px black solid;
+                width: 100px;
+                text-align: center;
+                margin: 0px;
+            }
+        </style>
         <h1>SitSpaceManagement</h1>
         Page: <a href="AddRemoveStudent.jsp">ADD/REMOVE Student</a> | <a href="AllData.jsp">Show All Data</a>
-        
+
         <h3>All Data</h3>
         <table>
             <tr>
@@ -35,8 +46,8 @@
                 </tr>
             </c:forEach>
         </table>
-        
-        
-        
+
+
+
     </body>
 </html>

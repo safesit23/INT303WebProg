@@ -7,21 +7,18 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.AllStudent;
-import model.Student;
 
 /**
  *
  * @author jatawatsafe
  */
-public class AddServlet extends HttpServlet {
+public class RemoveServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,26 +33,20 @@ public class AddServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
         String id = request.getParameter("id");
-        String name = request.getParameter("name");
-        String scoreText = request.getParameter("score");
-        if (id != null & name != null & scoreText != null) {
-            int score = Integer.parseInt(scoreText);
-            AllStudent allStudent = (AllStudent) session.getAttribute("allStudent");
-            if (allStudent == null) {
-                allStudent = new AllStudent();
-                session.setAttribute("allStudent", allStudent);
-                System.out.println("------Create new allStudent");
-            }
-            Student std = new Student(id, name, score);
-            boolean check = allStudent.add(std);
+        if(id!=null){
             String message;
-            if(check){
-                message = "Add Successful";
+            AllStudent allStudent = (AllStudent) session.getAttribute("allStudent");
+            if(allStudent != null){
+                boolean check = allStudent.remove(id);
+                if(check){
+                    message = "Remove Successful";
+                }else{
+                    message = "Remove Not Successful";
+                }
             }else{
-                message = "Add not successful";
+                message = "Remove Not Successful";
             }
             session.setAttribute("message", message);
-            System.out.println("------------Number of Student: "+allStudent.getAllData().size());
         }
         request.getServletContext().getRequestDispatcher("/AddRemoveStudent.jsp").forward(request, response);
     }
